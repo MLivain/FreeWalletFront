@@ -1,8 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import {RouterModule, Routes} from "@angular/router";
+import { FreeWalletYnvModule} from 'free-wallet-ynv';
+
+const routes: Routes = [
+  {
+    path:'',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  }
+];
 
 @NgModule({
   declarations: [
@@ -10,7 +18,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    FreeWalletYnvModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
