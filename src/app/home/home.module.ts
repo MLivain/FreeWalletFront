@@ -6,7 +6,7 @@ import {SharedModule} from "../shared/shared.module";
 import { HeaderComponent } from './header/header.component';
 import { HeaderButtonComponent } from './header-button/header-button.component';
 import { ErrorComponent } from './error/error.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from '../footer/footer.component';
 import { AnotherPageComponent } from './another-page/another-page.component';
 
 
